@@ -1,4 +1,18 @@
-# zamonarypad
-Low-latency capacitive touch osu keyboard, esp32-s2 based
-![PQXsjKq](https://github.com/zamonary1/zamonarypad/assets/73584226/02cd8d35-9fb3-4d81-9f6f-085c4118da58)
-![glI3ljj](https://github.com/zamonary1/zamonarypad/assets/73584226/7057503d-7839-4d8a-bdb0-fd2d415435ba)
+# Zamonarypad
+
+![Zamonarypad Keyboard](images/kicad-1.png)
+
+Zamonarypad is a low-latency capacitive touch keyboard, designed specifically for osu! players or other games that require quick and precise inputs. It is based on the ESP32-S2 microcontroller, ensuring high performance and low power consumption.
+
+## Features:
+- Low input latency
+- Capacitive touch sensing
+
+## Specifications:
+- Microcontroller: ESP32-S2
+- Connection: USB Type-C
+- Dimensions: 52.32 x 40.64 mm
+- Key count: 2
+
+## Support:
+Feel free to contact me via victor.sochi.live@gmail.com for any inquiries or support. I'll be happy to assist with any issues or questions you may have.
