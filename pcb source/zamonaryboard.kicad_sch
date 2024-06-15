@@ -2909,6 +2909,12 @@
 		(uuid "0d3d96d2-1af0-4df0-bca9-d26c02575bc1")
 	)
 	(junction
+		(at 134.62 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1cd5ec98-9fee-442e-b615-03cec7905f94")
+	)
+	(junction
 		(at 39.37 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3056,6 +3062,16 @@
 	)
 	(wire
 		(pts
+			(xy 137.16 44.45) (xy 137.16 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3696c79b-8898-43d3-8fd4-5cef270a5b37")
+	)
+	(wire
+		(pts
 			(xy 133.35 36.83) (xy 133.35 40.64)
 		)
 		(stroke
@@ -3106,16 +3122,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 49.53) (xy 137.16 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53a565b2-fd0f-4563-82f0-e81f6278d498")
-	)
-	(wire
-		(pts
 			(xy 50.8 48.26) (xy 53.34 48.26)
 		)
 		(stroke
@@ -3156,6 +3162,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 48.26) (xy 134.62 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78f2b9a1-39e6-42a6-8d29-e3ddfaba77b8")
+	)
+	(wire
+		(pts
 			(xy 173.99 45.72) (xy 144.78 45.72)
 		)
 		(stroke
@@ -3163,6 +3179,16 @@
 			(type default)
 		)
 		(uuid "7ce223d3-16db-448f-9b65-4669e9aed23a")
+	)
+	(wire
+		(pts
+			(xy 132.08 48.26) (xy 134.62 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8994336b-ed00-4e66-a20d-ce56ed6c78e8")
 	)
 	(wire
 		(pts
@@ -3176,7 +3202,7 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 49.53) (xy 134.62 44.45)
+			(xy 134.62 49.53) (xy 134.62 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3336,6 +3362,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 48.26) (xy 132.08 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdaddec3-5b79-42bb-907f-afbc06c2e6b7")
+	)
+	(wire
+		(pts
 			(xy 153.67 44.45) (xy 153.67 30.48)
 		)
 		(stroke
@@ -3343,6 +3379,28 @@
 			(type default)
 		)
 		(uuid "fe85c2b0-7564-4ff5-a652-9bf69aa6bfde")
+	)
+	(global_label "TX"
+		(shape input)
+		(at 177.8 54.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "100ddc7b-035d-4b3f-b307-f0f64299704d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.9623 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(global_label "D+"
 		(shape input)
@@ -3401,6 +3459,28 @@
 		(uuid "7a1fce2b-acde-475b-831a-2c9744d4ad17")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 183.6276 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RX"
+		(shape input)
+		(at 177.8 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "afdfd84f-235c-4613-9857-4c4eb508e335")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.2647 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3731,6 +3811,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C14665"
+			(at 121.92 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8f7486d0-5103-4b2d-988c-fc4937833e2c")
 		)
@@ -3791,6 +3880,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 133.35 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C19702"
+			(at 133.35 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3999,6 +4097,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C9010"
+			(at 71.12 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "d93881c3-1996-4eaf-a7cb-874ee2c21e68")
 		)
@@ -4065,6 +4172,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 177.8 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 177.8 25.4 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4538,6 +4654,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C15849"
+			(at 137.16 36.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fe8c28cd-84e5-490b-9f56-ef3061445e0c")
 		)
@@ -4913,6 +5038,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C14663"
+			(at 139.7 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ad46b32c-828e-4873-9468-97d2fcf60e2d")
 		)
@@ -4974,6 +5108,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 116.84 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 116.84 40.64 0)
 			(effects
 				(font
@@ -5392,6 +5535,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C63339"
+			(at 63.5 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3a8644e4-ed1f-4d83-802c-25a3eb38112d")
 		)
@@ -5452,6 +5604,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 157.48 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 157.48 30.48 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5828,6 +5989,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C63339"
+			(at 63.5 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "affbe7b2-b634-4047-b8fa-372d47bc846d")
 		)
@@ -6161,6 +6331,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C23186"
+			(at 54.61 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "97b00c89-5a7c-4a43-9b6b-762330962795")
 		)
@@ -6288,6 +6467,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 54.61 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23186"
+			(at 54.61 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
