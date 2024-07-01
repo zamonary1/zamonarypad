@@ -2957,6 +2957,12 @@
 		(uuid "bfa75ef0-7c20-42a1-9d9e-5b7f6e4629de")
 	)
 	(junction
+		(at 129.54 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d3a5134c-1e23-488f-a8a4-3836782e7e6e")
+	)
+	(junction
 		(at 116.84 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4847,6 +4853,71 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 129.54 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "707090c9-fbe7-481d-8696-2346a7828406")
+		(property "Reference" "#PWR026"
+			(at 129.54 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 128.524 29.718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 129.54 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8c90155-c5f7-4c72-96db-81818796b233")
+		)
+		(instances
+			(project "zamonaryboard"
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
