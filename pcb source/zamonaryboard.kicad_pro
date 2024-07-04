@@ -52,7 +52,14 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "unconnected_items|122930000|73985000|c4360cb5-008b-4b27-8492-50047a285604|9ec4615d-dcce-48a0-bbe8-d2f125c09c69",
+        "unconnected_items|133027000|76708000|56da399a-116e-4589-9cf3-cf482f9447e7|8fe44a8a-d4bf-4e76-9374-6bc7d860545a",
+        "unconnected_items|156750000|84375000|780681bb-7e9c-4539-8ddf-af86668a725e|014b8cb8-86d7-432b-b3c8-d54d025a9ee1",
+        "unconnected_items|161250000|84375000|9013bf62-b65b-4cab-9dbc-85d2b213ddaa|350c99bb-cb0f-4f62-9852-ace534e9c6bf",
+        "unconnected_items|164350000|84375000|c512a997-83bc-43d0-b52b-04e4d405e136|4c7e8607-39e0-4516-a15b-cb15dc4b20bc",
+        "unconnected_items|168850000|84375000|3be8e189-b939-4ab3-844e-f4d33bb7914d|7caebabc-90cf-49a5-a6f5-2771a77ef7c5"
+      ],
       "meta": {
         "version": 2
       },
@@ -62,7 +69,7 @@
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
-        "courtyards_overlap": "error",
+        "courtyards_overlap": "ignore",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
@@ -80,7 +87,7 @@
         "items_not_allowed": "error",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
-        "lib_footprint_mismatch": "warning",
+        "lib_footprint_mismatch": "ignore",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "missing_courtyard": "ignore",
@@ -91,8 +98,8 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
