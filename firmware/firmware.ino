@@ -15,10 +15,10 @@ USBHIDKeyboard Keyboard;
 
 // ESP32 Touch keyboard
 
-#define poll_data_rounding 5000.0
+#define poll_data_rounding 1000.0
 //#define debug
-#define btn_1_pin T5
-#define btn_2_pin T3
+#define btn_1_pin T3
+#define btn_2_pin T5
 
 
 
@@ -29,7 +29,7 @@ unsigned int value2;
 unsigned int button1_sensitivity;
 unsigned int button2_sensitivity;
 unsigned long millis_sleep_timer = 0;
-unsigned long millis_timeout_last_millis = 0;  //wtfs
+unsigned long millis_timeout_last_millis = 0;  //wtf
 //unsigned long timer_hz = millis();
 unsigned int i = 1;
 const unsigned short sleep_timeout = 10000;  //10 seconds
@@ -125,7 +125,7 @@ void loop() {
     i = 1;
   } else i++;*/
 
-  for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more
+  for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more often
 
     if (touch1detected) {
       if (touchInterruptGetLastStatus(btn_1_pin)) {
@@ -144,8 +144,6 @@ void loop() {
       touch2detected = false;
     }
 
-    if (touch1detected or touch2detected) digitalWrite(LED_BUILTIN, HIGH);
-    else digitalWrite(LED_BUILTIN, LOW);
   }
   if (Serial.available() > 0) {
 

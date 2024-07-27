@@ -3452,6 +3452,30 @@
 		)
 		(uuid "fe85c2b0-7564-4ff5-a652-9bf69aa6bfde")
 	)
+	(label "VALUES TBD"
+		(at 187.96 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 39 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "07c88caf-8772-4fb8-a821-09237ae534c4")
+	)
+	(label "VALUE TBD"
+		(at 82.55 82.55 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 0 39 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "7a6f4ce5-74f4-4c50-bec2-37e2e791d214")
+	)
 	(global_label "TX"
 		(shape input)
 		(at 185.42 54.61 0)
