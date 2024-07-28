@@ -1,5 +1,3 @@
-
-
 #if ARDUINO_USB_MODE
 #warning This sketch should be used when USB is in OTG mode
 void setup() {}
@@ -20,6 +18,9 @@ USBHIDKeyboard Keyboard;
 #define btn_1_pin T3
 #define btn_2_pin T5
 
+//Type of touch signal reading
+//#define interrupts
+#define analogRead
 
 
 //#define plotter
@@ -102,9 +103,10 @@ void setup() {
 
   Serial.println(button1_sensitivity);
   Serial.println(button2_sensitivity);
-
+#ifdef interrupts
   touchAttachInterrupt(btn_1_pin, gotTouch1, button1_sensitivity);
   touchAttachInterrupt(btn_2_pin, gotTouch2, button2_sensitivity);
+#endif
 }
 
 void gotTouch1() {
@@ -126,7 +128,7 @@ void loop() {
   } else i++;*/
 
   for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more often
-
+#ifdef interrupts
     if (touch1detected) {
       if (touchInterruptGetLastStatus(btn_1_pin)) {
         Keyboard.press('z');
@@ -143,7 +145,16 @@ void loop() {
       }
       touch2detected = false;
     }
+#endif
+#ifdef analogRead
 
+    if (touchRead(btn_1_pin) / 20 > button1_sensitivity) Keyboard.press('z');
+    else Keyboard.release('z');
+
+    if (touchRead(btn_2_pin) / 20 > button2_sensitivity) Keyboard.press('x');
+    else Keyboard.release('x');
+
+#endif
   }
   if (Serial.available() > 0) {
 
@@ -178,16 +189,20 @@ void loop() {
       EEPROM.put(10, argument);
       EEPROM.commit();
       button1_sensitivity = argument;
+#ifdef interrupts
       touchDetachInterrupt(btn_1_pin);
       touchAttachInterrupt(btn_1_pin, gotTouch1, argument);
+#endif
       Serial.println("success");
     } else if (inputString.startsWith("wrbtn2")) {
       int argument = inputString.substring(6).toInt();
       EEPROM.put(18, argument);
       EEPROM.commit();
       button2_sensitivity = argument;
+#ifdef interrupts
       touchDetachInterrupt(btn_2_pin);
       touchAttachInterrupt(btn_2_pin, gotTouch2, argument);
+#endif
       Serial.println("success");
     }
 
