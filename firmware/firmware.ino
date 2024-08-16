@@ -19,6 +19,7 @@ USBHIDKeyboard Keyboard;
 #define btn_2_pin T5
 
 //Type of touch signal reading
+
 //#define interrupts
 #define analogRead
 
@@ -127,7 +128,7 @@ void loop() {
     i = 1;
   } else i++;*/
 
-  for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more often
+//  for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more often
 #ifdef interrupts
     if (touch1detected) {
       if (touchInterruptGetLastStatus(btn_1_pin)) {
@@ -155,7 +156,7 @@ void loop() {
     else Keyboard.release('x');
 
 #endif
-  }
+//  }
   if (Serial.available() > 0) {
 
     String inputString = Serial.readStringUntil('\n');  // read untill the next string
@@ -177,8 +178,20 @@ void loop() {
       StaticJsonDocument<100> response;
       response["button1val"] = touchRead(btn_1_pin) / 20.0;
       response["button2val"] = touchRead(btn_2_pin) / 20.0;
+//      response["button1sens"] = button1_sensitivity;
+//      response["button2sens"] = button2_sensitivity;
+      String stringResponse;
+      serializeJson(response, stringResponse);
+      Serial.println(stringResponse);
+    }
+
+    else if (inputString == "readmore") {
+      StaticJsonDocument<100> response;
+      response["button1val"] = touchRead(btn_1_pin) / 20.0;
+      response["button2val"] = touchRead(btn_2_pin) / 20.0;
       response["button1sens"] = button1_sensitivity;
       response["button2sens"] = button2_sensitivity;
+      response["millis"] = millis();
       String stringResponse;
       serializeJson(response, stringResponse);
       Serial.println(stringResponse);

@@ -3304,7 +3304,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 77.47) (xy 83.82 77.47)
+			(xy 71.12 77.47) (xy 95.25 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3424,16 +3424,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 77.47) (xy 95.25 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f83af7ff-44b9-4771-9a1c-8816a6fcc608")
-	)
-	(wire
-		(pts
 			(xy 132.08 48.26) (xy 132.08 49.53)
 		)
 		(stroke
@@ -3451,30 +3441,6 @@
 			(type default)
 		)
 		(uuid "fe85c2b0-7564-4ff5-a652-9bf69aa6bfde")
-	)
-	(label "VALUES TBD"
-		(at 187.96 81.28 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 39 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "07c88caf-8772-4fb8-a821-09237ae534c4")
-	)
-	(label "VALUE TBD"
-		(at 82.55 82.55 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(color 255 0 39 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "7a6f4ce5-74f4-4c50-bec2-37e2e791d214")
 	)
 	(global_label "TX"
 		(shape input)
@@ -3522,7 +3488,7 @@
 	)
 	(global_label "BTN1"
 		(shape input)
-		(at 185.42 77.47 0)
+		(at 177.8 77.47 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3532,7 +3498,7 @@
 		)
 		(uuid "79fab77b-07e2-4ed9-ba9b-29b4c0a41234")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.1828 77.47 0)
+			(at 185.5628 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3610,7 +3576,7 @@
 	)
 	(global_label "BTN2"
 		(shape input)
-		(at 185.42 82.55 0)
+		(at 177.8 82.55 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3620,7 +3586,7 @@
 		)
 		(uuid "caaa3317-e7c3-447a-8f93-4e9148b636de")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.1828 82.55 0)
+			(at 185.5628 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4449,84 +4415,6 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 181.61 77.47 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3868a50f-505f-4ed6-9346-e54dd2d5e54b")
-		(property "Reference" "R7"
-			(at 180.34 75.438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 179.578 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 181.61 79.248 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 181.61 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 181.61 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23186"
-			(at 181.61 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e530ba9e-0425-4a42-be92-23d3082c89a5")
-		)
-		(pin "1"
-			(uuid "49e8b1e5-b5f0-4154-9240-98645e15350b")
-		)
-		(instances
-			(project "zamonaryboard"
-				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -6167,162 +6055,6 @@
 			(project ""
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 181.61 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ac0476b7-28e6-4eae-97d0-9f12eefe45e5")
-		(property "Reference" "R8"
-			(at 180.34 80.518 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 179.578 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 181.61 84.328 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 181.61 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 181.61 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23186"
-			(at 181.61 82.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f84c3e05-ea8a-4a3a-9408-5cda8e78aaf7")
-		)
-		(pin "1"
-			(uuid "b7c4ef6a-d81d-4ae0-ab76-673932f44d06")
-		)
-		(instances
-			(project "zamonaryboard"
-				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 87.63 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ad725103-f6cf-40ca-9cbf-586927b85f71")
-		(property "Reference" "R6"
-			(at 87.376 79.502 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "0"
-			(at 90.424 79.502 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 87.63 75.692 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 87.63 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 87.63 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C23186"
-			(at 87.63 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "204b3a51-0de6-401c-b284-1a1502e64ea4")
-		)
-		(pin "1"
-			(uuid "1b33ba1c-40fb-4a99-af2f-10b86009be69")
-		)
-		(instances
-			(project "zamonaryboard"
-				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
-					(reference "R6")
 					(unit 1)
 				)
 			)
