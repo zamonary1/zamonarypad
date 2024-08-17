@@ -1,4 +1,5 @@
 import dearpygui.dearpygui as dpg
+import pymsgbox
 import serial
 import serial.tools.list_ports
 import time
@@ -13,11 +14,23 @@ min1 = float('inf')
 min2 = float('inf')
 max1 = float('-inf')
 max2 = float('-inf')
-delay_between_reads = 0.03
+delay_between_reads = 0.033 #33ms between updates or 30 updates per second
 # Функция для получения списка доступных последовательных портов
 def get_serial_ports():
     ports = serial.tools.list_ports.comports()
-    return [port.device for port in ports]
+    ports = [port.device for port in ports]
+    ports = [x for x in ports if 'ttyACM' in x] #keep only elements containing ttyACM
+    if ports == []: 
+        try: 
+            dpg.set_value("connection_status", "Device not found")
+            dpg.hide_item(serial_devices_list)
+        except SystemError: next
+    else:
+        try: 
+            dpg.set_value("connection_status", f"Found {len(ports)} devices")
+            dpg.show_item(serial_devices_list)
+        except SystemError: next
+    return ports
 
 # Функция для установки последовательного соединения
 def connect_serial():
@@ -26,18 +39,22 @@ def connect_serial():
     try:
         ser = serial.Serial(port, 115200, timeout=1)
         dpg.set_value("connection_status", f"Connected to {port}")
-    except serial.SerialException:
+        lasttime = time.time()
+    except serial.SerialException as err:
+        print(err)
         ser = None
-        dpg.set_value("connection_status", "Failed to connect")
+        if 'Device or resource busy' in str(err):
+            dpg.set_value("connection_status", "Failed to connect:\nDevice or resource busy")
+        else: dpg.set_value("connection_status", "Failed to connect")
 
 def refresh_serial():
     dpg.configure_item("serial_port", items=get_serial_ports())
+    
 
 # Функция для отправки команды "readbtn1"
-def readbuttonvalues(mode = ''):
+def readbuttonvalues(raw = False):
     global lasttime
     global json_response
-    global json_response_raw
     global min1
     global min2
     global max1
@@ -45,10 +62,8 @@ def readbuttonvalues(mode = ''):
     
     if lasttime + delay_between_reads < time.time() and ser != None:
         ser.write(b'read\n')
-        json_response_raw = ser.readline()
-        json_response_raw = json.loads(json_response_raw)
-        json_response = json_response_raw
-        print(json_response)
+        json_response = json.loads(ser.readline())
+        #print(json_response)
         
         min1 = min(min1, int(json_response['button1val']))
         min2 = min(min2, int(json_response['button2val']))
@@ -69,16 +84,26 @@ def readbuttonvalues(mode = ''):
         
         lasttime += delay_between_reads
     
-    if mode == 'raw': return(json_response_raw)
+    if  raw: 
+        ser.write(b'read\n')
+        return(json.loads(ser.readline()))
+    
     return(json_response)
 
-def calibrate_btn_1():
+def calibrate_btn():
     if ser is not None:
-        json_response_raw = readbuttonvalues('raw')
-        val_to_calibrate = json_response_raw["button1val"]
-        print(val_to_calibrate)
-        ser.write(f'wrbtn1 {val_to_calibrate}\n'.encode())
-        ser.readline()
+        
+        pymsgbox.alert(text="Do not touch the zamonaryboard and press OK", title='', button='OK')
+        json_response_raw = readbuttonvalues(True)
+        val_btn1_idle = int(json_response_raw["button1val"])
+        val_btn2_idle = int(json_response_raw["button2val"])
+        print(json_response_raw, val_btn1_idle, val_btn2_idle)
+        time.sleep(0.1)
+        ser.write(f'wrbtn1 {val_btn1_idle + 250}\n'.encode())
+        time.sleep(0.1)
+        ser.write(f'wrbtn2 {val_btn2_idle + 250}\n'.encode())
+        pymsgbox.alert(text="Success", title='', button='OK')
+
 
 
     
@@ -91,11 +116,15 @@ dpg.setup_dearpygui()
 
 with dpg.window(tag="mainwin"):
 
-    # Выпадающий список для выбора последовательного порта
+    # droplist of all serial devices
     print("created window instance")
     serial_ports = get_serial_ports()
     print(serial_ports)
-    dpg.add_combo(serial_ports, default_value=serial_ports[0] if serial_ports else "", tag="serial_port")
+    serial_devices_list = dpg.add_combo(serial_ports, default_value=serial_ports[0] if serial_ports else "", tag="serial_port")
+    # if serial_ports == ["Not found"]:
+    #     dpg.hide_item(serial_devices_list)
+    # else: 
+    #     dpg.show_item(serial_devices_list)
 
     # Кнопка для установки последовательного соединения
     dpg.add_button(callback=connect_serial, label='connect')
@@ -106,10 +135,10 @@ with dpg.window(tag="mainwin"):
     #dpg.add_button(callback=send_readbtn2, label='read 2')
 
     # Полоса загрузки для отображения полученных значений
-    dpg.add_progress_bar(label="1", default_value=0, tag="progress_bar_1")
-    dpg.add_progress_bar(label="2", default_value=0, tag="progress_bar_2")
+    button_bar_1 = dpg.add_progress_bar(label="1", default_value=0, tag="progress_bar_1")
+    button_bar_2 = dpg.add_progress_bar(label="2", default_value=0, tag="progress_bar_2")
     
-    dpg.add_button(callback=calibrate_btn_1, label='calibrate 1')
+    dpg.add_button(callback=calibrate_btn, label='calibrate')
 
     # Метка для отображения статуса соединения
     dpg.add_text("", tag="connection_status")
