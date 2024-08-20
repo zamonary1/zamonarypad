@@ -50,6 +50,13 @@ def connect_serial():
 def refresh_serial():
     dpg.configure_item("serial_port", items=get_serial_ports())
     
+def lostConnection():
+    ser = None
+    refresh_serial()
+    dpg.set_value("connection_status", "Lost connection")
+    dpg.set_value("progress_bar_1", 0.0)
+    dpg.set_value("progress_bar_2", 0.0)
+    json_response = json.loads('{"button1val":0,"button2val":0}') #reset button statusbars to 0
 
 # Функция для отправки команды "readbtn1"
 def readbuttonvalues(raw = False):
@@ -59,10 +66,20 @@ def readbuttonvalues(raw = False):
     global min2
     global max1
     global max2
+    global ser
     
     if lasttime + delay_between_reads < time.time() and ser != None:
-        ser.write(b'read\n')
-        json_response = json.loads(ser.readline())
+        try: ser.write(b'read\n')
+        except Exception:
+            if ser != None:
+                lostConnection()
+                return 0
+        # ser.write(b'read\n')
+
+        try: json_response = json.loads(ser.readline())
+        except serial.serialutil.SerialException:
+            lostConnection()
+            return 0
         #print(json_response)
         
         min1 = min(min1, int(json_response['button1val']))
@@ -84,7 +101,7 @@ def readbuttonvalues(raw = False):
         
         lasttime += delay_between_reads
     
-    if  raw: 
+    if raw: 
         ser.write(b'read\n')
         return(json.loads(ser.readline()))
     
@@ -93,15 +110,16 @@ def readbuttonvalues(raw = False):
 def calibrate_btn():
     if ser is not None:
         
-        pymsgbox.alert(text="Do not touch the zamonaryboard and press OK", title='', button='OK')
+        #pymsgbox.alert(text="Do not touch the zamonaryboard and press OK", title='', button='OK')
+        sensitivity = int(pymsgbox.prompt(text="Enter the sensitivity and do NOT touch the buttons", title='' , default='300'))
         json_response_raw = readbuttonvalues(True)
         val_btn1_idle = int(json_response_raw["button1val"])
         val_btn2_idle = int(json_response_raw["button2val"])
         print(json_response_raw, val_btn1_idle, val_btn2_idle)
         time.sleep(0.1)
-        ser.write(f'wrbtn1 {val_btn1_idle + 250}\n'.encode())
+        ser.write(f'wrbtn1 {val_btn1_idle + sensitivity}\n'.encode())
         time.sleep(0.1)
-        ser.write(f'wrbtn2 {val_btn2_idle + 250}\n'.encode())
+        ser.write(f'wrbtn2 {val_btn2_idle + sensitivity}\n'.encode())
         pymsgbox.alert(text="Success", title='', button='OK')
 
 
