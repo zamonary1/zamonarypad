@@ -44,7 +44,7 @@ void setup() {
   Serial.begin(115200);
   //delay(1000);  // give me some time to bring up serial monitor
 
-  Serial.println("ESP32 Touch Test");
+
   Keyboard.begin();
   USB.begin();
   pinMode(LED_BUILTIN, OUTPUT);
@@ -121,42 +121,34 @@ void gotTouch2() {
 
 
 void loop() {
-  /*if (i == poll_data_rounding) {
-    Serial.print("Poll_rate(hz):");
-    Serial.println(1000.0 / ((millis() - timer_hz) / poll_data_rounding));
-    timer_hz = millis();
-    i = 1;
-  } else i++;*/
-
-//  for (short i; i < 10; i++) {  //we value button responsibility more than serial interface, so, we do it 10 times more often
 #ifdef interrupts
-    if (touch1detected) {
-      if (touchInterruptGetLastStatus(btn_1_pin)) {
-        Keyboard.press('z');
-      } else {
-        Keyboard.release('z');
-      }
-      touch1detected = false;
+  if (touch1detected) {
+    if (touchInterruptGetLastStatus(btn_1_pin)) {
+      Keyboard.press('z');
+    } else {
+      Keyboard.release('z');
     }
-    if (touch2detected) {
-      if (touchInterruptGetLastStatus(btn_2_pin)) {
-        Keyboard.press('x');
-      } else {
-        Keyboard.release('x');
-      }
-      touch2detected = false;
+    touch1detected = false;
+  }
+  if (touch2detected) {
+    if (touchInterruptGetLastStatus(btn_2_pin)) {
+      Keyboard.press('x');
+    } else {
+      Keyboard.release('x');
     }
+    touch2detected = false;
+  }
 #endif
 #ifdef analogRead
 
-    if (touchRead(btn_1_pin) / 20 > button1_sensitivity) Keyboard.press('z');
-    else Keyboard.release('z');
+  if (touchRead(btn_1_pin) / 20 > button1_sensitivity) Keyboard.press('z');
+  else Keyboard.release('z');
 
-    if (touchRead(btn_2_pin) / 20 > button2_sensitivity) Keyboard.press('x');
-    else Keyboard.release('x');
+  if (touchRead(btn_2_pin) / 20 > button2_sensitivity) Keyboard.press('x');
+  else Keyboard.release('x');
 
 #endif
-//  }
+  //  }
   if (Serial.available() > 0) {
 
     String inputString = Serial.readStringUntil('\n');  // read untill the next string
@@ -178,8 +170,6 @@ void loop() {
       StaticJsonDocument<100> response;
       response["button1val"] = touchRead(btn_1_pin) / 20.0;
       response["button2val"] = touchRead(btn_2_pin) / 20.0;
-//      response["button1sens"] = button1_sensitivity;
-//      response["button2sens"] = button2_sensitivity;
       String stringResponse;
       serializeJson(response, stringResponse);
       Serial.println(stringResponse);
@@ -206,8 +196,16 @@ void loop() {
       touchDetachInterrupt(btn_1_pin);
       touchAttachInterrupt(btn_1_pin, gotTouch1, argument);
 #endif
-      Serial.println("success");
-    } else if (inputString.startsWith("wrbtn2")) {
+      StaticJsonDocument<100> response;
+      response["button1val"] = touchRead(btn_1_pin) / 20.0;
+      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["status"] = "success";
+      String stringResponse;
+      serializeJson(response, stringResponse);
+      Serial.println(stringResponse);
+    }
+
+    else if (inputString.startsWith("wrbtn2")) {
       int argument = inputString.substring(6).toInt();
       EEPROM.put(18, argument);
       EEPROM.commit();
@@ -216,9 +214,24 @@ void loop() {
       touchDetachInterrupt(btn_2_pin);
       touchAttachInterrupt(btn_2_pin, gotTouch2, argument);
 #endif
-      Serial.println("success");
+      StaticJsonDocument<100> response;
+      response["button1val"] = touchRead(btn_1_pin) / 20.0;
+      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["status"] = "success";
+      String stringResponse;
+      serializeJson(response, stringResponse);
+      Serial.println(stringResponse);
     }
 
+
+    else if (inputString == "hello") {
+      StaticJsonDocument<100> response;
+      response["response"] = "Hello!";
+      response["millis"] = millis();
+      String stringResponse;
+      serializeJson(response, stringResponse);
+      Serial.println(stringResponse);
+    }
 
     else {
       // unknown command
