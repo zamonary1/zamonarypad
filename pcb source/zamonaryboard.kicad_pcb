@@ -122,7 +122,7 @@
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "../../pcb-export/p1.4/")
+			(outputdirectory "../../pcb-export/v1/")
 		)
 	)
 	(net 0 "")
