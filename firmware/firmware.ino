@@ -20,7 +20,7 @@ USBHIDKeyboard Keyboard;
 
 //Type of touch signal reading
 
-//#define interrupts
+//#define interrupts //deprecated, do not use
 #define analogRead
 
 
@@ -136,10 +136,10 @@ void setup() {
 
   Serial.println(button1_sensitivity);
   Serial.println(button2_sensitivity);
-#ifdef interrupts
+/*#ifdef interrupts
   touchAttachInterrupt(btn_1_pin, gotTouch1, button1_sensitivity);
   touchAttachInterrupt(btn_2_pin, gotTouch2, button2_sensitivity);
-#endif
+#endif*/
 }
 
 void gotTouch1() {
@@ -153,7 +153,7 @@ void gotTouch2() {
 
 
 void loop() {
-  #ifdef interrupts
+/*  #ifdef interrupts
     if (touch1detected) {
       if (touchInterruptGetLastStatus(btn_1_pin)) {
         Keyboard.press('z');
@@ -170,14 +170,17 @@ void loop() {
       }
       touch2detected = false;
     }
-  #endif
+  #endif */
   #ifdef analogRead
 
-    if (touchRead(btn_1_pin) / 20 > button1_sensitivity) press_button_1();
-    else release_button_1();
+    int btn1val = touchRead(btn_1_pin);
+    int btn2val = touchRead(btn_2_pin);
 
-    if (touchRead(btn_2_pin) / 20 > button2_sensitivity) press_button_2();
-    else release_button_2();
+    if (btn1val > button1_sensitivity) press_button_1();
+    else if (btn1val < button1_sensitivity - 4) release_button_1();
+
+    if (btn2val > button2_sensitivity) press_button_2();
+    else if (btn2val < button2_sensitivity - 4) release_button_2();
 
   #endif
 
@@ -187,8 +190,8 @@ void loop() {
 
     if (inputString == "read") {
       StaticJsonDocument<100> response;
-      response["button1val"] = touchRead(btn_1_pin) / 20.0;
-      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["button1val"] = touchRead(btn_1_pin);
+      response["button2val"] = touchRead(btn_2_pin);
       String stringResponse;
       serializeJson(response, stringResponse);
       Serial.println(stringResponse);
@@ -196,8 +199,8 @@ void loop() {
 
     else if (inputString == "readmore") {
       StaticJsonDocument<100> response;
-      response["button1val"] = touchRead(btn_1_pin) / 20.0;
-      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["button1val"] = touchRead(btn_1_pin);
+      response["button2val"] = touchRead(btn_2_pin);
       response["button1sens"] = button1_sensitivity;
       response["button2sens"] = button2_sensitivity;
       response["millis"] = millis();
@@ -211,13 +214,13 @@ void loop() {
       EEPROM.put(10, argument);
       EEPROM.commit();
       button1_sensitivity = argument;
-      #ifdef interrupts
+/*      #ifdef interrupts
         touchDetachInterrupt(btn_1_pin);
         touchAttachInterrupt(btn_1_pin, gotTouch1, argument);
-      #endif
+      #endif */
       StaticJsonDocument<100> response;
-      response["button1val"] = touchRead(btn_1_pin) / 20.0;
-      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["button1val"] = touchRead(btn_1_pin);
+      response["button2val"] = touchRead(btn_2_pin);
       response["status"] = "success";
       String stringResponse;
       serializeJson(response, stringResponse);
@@ -229,13 +232,13 @@ void loop() {
       EEPROM.put(18, argument);
       EEPROM.commit();
       button2_sensitivity = argument;
-      #ifdef interrupts
+/*      #ifdef interrupts
         touchDetachInterrupt(btn_2_pin);
         touchAttachInterrupt(btn_2_pin, gotTouch2, argument);
-      #endif
+      #endif */
       StaticJsonDocument<100> response;
-      response["button1val"] = touchRead(btn_1_pin) / 20.0;
-      response["button2val"] = touchRead(btn_2_pin) / 20.0;
+      response["button1val"] = touchRead(btn_1_pin);
+      response["button2val"] = touchRead(btn_2_pin);
       response["status"] = "success";
       String stringResponse;
       serializeJson(response, stringResponse);
@@ -266,7 +269,7 @@ void loop() {
       timer_b = 0;
     }
   #endif
-  delay(1);
+  delayMicroseconds(500);
 }
 
 
