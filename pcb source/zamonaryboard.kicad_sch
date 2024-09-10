@@ -5796,7 +5796,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithoutStem"
 			(at 186.69 64.77 0)
 			(effects
 				(font
@@ -6724,7 +6724,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithoutStem"
 			(at 81.28 49.53 0)
 			(effects
 				(font
