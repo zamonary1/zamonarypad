@@ -1147,6 +1147,260 @@
 				)
 			)
 		)
+		(symbol "LED:WS2812B-2020"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 5.08 5.715 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right bottom)
+				)
+			)
+			(property "Value" "WS2812B-2020"
+				(at 1.27 -5.715 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+				(at 1.27 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+				(at 2.54 -9.525 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "RGB LED NeoPixel Nano addressable"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED*WS2812*-2020_PLCC4*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "WS2812B-2020_0_0"
+				(text "RGB"
+					(at 2.286 -4.191 0)
+					(effects
+						(font
+							(size 0.762 0.762)
+						)
+					)
+				)
+			)
+			(symbol "WS2812B-2020_0_1"
+				(polyline
+					(pts
+						(xy 1.27 -3.556) (xy 1.778 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.699 -3.556) (xy 2.667 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -2.54) (xy 1.27 -3.556) (xy 1.27 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -1.524) (xy 1.27 -2.54) (xy 1.27 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.683 -1.016) (xy 3.683 -3.556) (xy 3.683 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.699 -1.524) (xy 2.667 -1.524) (xy 3.683 -3.556) (xy 4.699 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 5.08 5.08)
+					(end -5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "WS2812B-2020_1_1"
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "PCM_Espressif:ESP32-S2"
 			(pin_names
 				(offset 1.016)
@@ -2927,6 +3181,12 @@
 		(uuid "4e910706-2249-485c-b325-aa5c9a016422")
 	)
 	(junction
+		(at 81.28 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5b821d06-487d-475a-a641-4b97c5b4bb2a")
+	)
+	(junction
 		(at 36.83 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2991,6 +3251,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7b7c6c6-c8a3-4135-9e34-2b514cf20585")
+	)
+	(junction
+		(at 81.28 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fb221e4c-3e03-4562-a846-cfad4bd6ae05")
 	)
 	(wire
 		(pts
@@ -3094,6 +3360,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 148.59) (xy 104.14 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b1b0cf9-6688-46bf-8096-e61c803f96af")
+	)
+	(wire
+		(pts
 			(xy 144.78 45.72) (xy 144.78 49.53)
 		)
 		(stroke
@@ -3124,6 +3400,26 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 168.91) (xy 81.28 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f3e0ef2-5a9e-476f-aa52-328e7fdc7a88")
+	)
+	(wire
+		(pts
+			(xy 81.28 168.91) (xy 81.28 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "329e4dba-c974-46d5-bd0f-08bf506218e6")
+	)
+	(wire
+		(pts
 			(xy 36.83 111.76) (xy 36.83 114.3)
 		)
 		(stroke
@@ -3141,6 +3437,16 @@
 			(type default)
 		)
 		(uuid "3696c79b-8898-43d3-8fd4-5cef270a5b37")
+	)
+	(wire
+		(pts
+			(xy 88.9 158.75) (xy 96.52 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "388e05e2-1d5f-44a4-a72f-a0ac84897fe9")
 	)
 	(wire
 		(pts
@@ -3284,6 +3590,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 148.59) (xy 81.28 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a04a36b-116d-4d30-966a-04add84f21a8")
+	)
+	(wire
+		(pts
 			(xy 99.06 59.69) (xy 99.06 54.61)
 		)
 		(stroke
@@ -3291,6 +3607,16 @@
 			(type default)
 		)
 		(uuid "7c78d050-1e14-4cf3-86a6-896a1741420c")
+	)
+	(wire
+		(pts
+			(xy 81.28 171.45) (xy 81.28 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "838fa22a-b5a5-49bc-b458-cdfa4d63399d")
 	)
 	(wire
 		(pts
@@ -3414,6 +3740,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 166.37) (xy 104.14 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "accaa720-0cec-409d-9864-ac63edadc460")
+	)
+	(wire
+		(pts
 			(xy 99.06 54.61) (xy 93.98 54.61)
 		)
 		(stroke
@@ -3494,6 +3830,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 147.32) (xy 81.28 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e563de1b-2306-4577-815e-5ffeb1d98776")
+	)
+	(wire
+		(pts
 			(xy 132.08 44.45) (xy 118.11 44.45)
 		)
 		(stroke
@@ -3554,6 +3900,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 148.59) (xy 104.14 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6383e06-3e1a-47c3-96dd-2ae2c3b3b5d2")
+	)
+	(wire
+		(pts
 			(xy 124.46 29.21) (xy 124.46 35.56)
 		)
 		(stroke
@@ -3594,6 +3950,28 @@
 			)
 		)
 	)
+	(global_label "aRGB_pin"
+		(shape input)
+		(at 66.04 158.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1e8852ad-e372-4877-8ffb-fe9edd3194b7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.2254 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D+"
 		(shape input)
 		(at 55.88 45.72 0)
@@ -3607,6 +3985,28 @@
 		(uuid "3bbcae10-8698-4660-88ac-b184c75631f1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 61.7076 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "aRGB_pin"
+		(shape input)
+		(at 177.8 95.25 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6f4b3c8a-fb3c-4c1f-a2c4-19b140f7c3ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.6146 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3875,6 +4275,81 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B-2020")
+		(at 104.14 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0f6df232-a0f7-4539-ade1-0c67cd756fb8")
+		(property "Reference" "D1"
+			(at 106.934 148.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 113.284 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+			(at 105.41 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+			(at 106.68 168.275 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 104.14 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "ed7e703e-c02a-45d1-99e0-bc7a41384973")
+		)
+		(pin "1"
+			(uuid "c4d7b717-e110-405d-8225-1aa94c676704")
+		)
+		(pin "3"
+			(uuid "824e9192-8826-4216-8c7f-79e12c2c31e4")
+		)
+		(pin "2"
+			(uuid "929570d9-3e87-46c8-8c49-6f57f82dabe1")
+		)
+		(instances
+			(project "zamonaryboard"
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -4240,6 +4715,72 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
+		(at 81.28 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ab667af-4e1e-4ac9-8358-3fe3b87dbb85")
+		(property "Reference" "#PWR06"
+			(at 81.28 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 81.28 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 81.28 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cd259d0e-0bb6-4d7c-80ea-32f70409b937")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -4876,6 +5417,81 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "LED:WS2812B-2020")
+		(at 81.28 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5b1e8ac8-2bd9-495d-8cde-d99b00e12ba1")
+		(property "Reference" "D2"
+			(at 84.836 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 91.186 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+			(at 82.55 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+			(at 83.82 168.275 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 81.28 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "4f1e0bb4-8678-40e7-825e-67587f0e7c4d")
+		)
+		(pin "1"
+			(uuid "9e70aa71-dd9d-442b-b354-46bd193407a3")
+		)
+		(pin "3"
+			(uuid "dae0998d-82b0-41a5-a3da-c1df7c6d0523")
+		)
+		(pin "2"
+			(uuid "138f3d81-2445-4031-b4d8-a523526fc417")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -5568,7 +6184,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "500"
+		(property "Value" "480"
 			(at 179.578 54.61 90)
 			(effects
 				(font
@@ -5700,6 +6316,72 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 81.28 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84b2ccf1-ab7f-4216-bdf4-66a371ba4a0b")
+		(property "Reference" "#PWR07"
+			(at 81.28 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 81.28 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 81.28 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "69ac7223-4b2d-4d9c-92f8-a18b471f24a8")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5975,6 +6657,84 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 69.85 158.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9ebfbd9a-f9ab-498f-8133-3c453c34ae8f")
+		(property "Reference" "R6"
+			(at 68.58 156.718 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "480"
+			(at 67.818 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 69.85 160.528 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 69.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 69.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C23186"
+			(at 69.85 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6c7377f1-2ddf-4676-8a93-a9d6544b212b")
+		)
+		(pin "1"
+			(uuid "edd5987e-9aa7-4b65-9e4c-df22e9075420")
+		)
+		(instances
+			(project "zamonaryboard"
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "R6")
 					(unit 1)
 				)
 			)

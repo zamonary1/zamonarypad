@@ -52,9 +52,7 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [
-        "extra_footprint|164600000|104700000|4f33eb45-a020-4da0-bd7d-125bd28382c2|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -471,7 +469,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../../pcb-export/v1/",
+      "plot": "../../pcb-export/v1.1-f/",
       "pos_files": "../../pcb-export/p1.3/",
       "specctra_dsn": "../../../../../../../home/zamonary1/Загрузки/zamonaryboard.dsn",
       "step": "",
