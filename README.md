@@ -1,6 +1,6 @@
 # Zamonarypad
 
-![Zamonarypad Keyboard](images/kicad-2.png)
+![Zamonarypad Keyboard](images/kicad-v1.1f.png)
 
 Zamonarypad is a low-latency capacitive touch 2-key keyboard. It is based on cheap ESP32-S2 microcontroller with native USB support.
 
