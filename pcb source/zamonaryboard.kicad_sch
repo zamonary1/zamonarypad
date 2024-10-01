@@ -3181,6 +3181,12 @@
 		(uuid "4e910706-2249-485c-b325-aa5c9a016422")
 	)
 	(junction
+		(at 201.93 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "566e3f8a-8a6e-4f37-b5f6-80fca0e001e5")
+	)
+	(junction
 		(at 81.28 168.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3203,6 +3209,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "995681a4-9a63-480f-b8a5-fc25725319f5")
+	)
+	(junction
+		(at 201.93 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "999810d9-7ac8-4df2-bb1f-9987d26337c2")
 	)
 	(junction
 		(at 151.13 34.29)
@@ -3360,16 +3372,6 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 148.59) (xy 104.14 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b1b0cf9-6688-46bf-8096-e61c803f96af")
-	)
-	(wire
-		(pts
 			(xy 144.78 45.72) (xy 144.78 49.53)
 		)
 		(stroke
@@ -3400,13 +3402,13 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 168.91) (xy 81.28 168.91)
+			(xy 88.9 158.75) (xy 93.98 158.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2f3e0ef2-5a9e-476f-aa52-328e7fdc7a88")
+		(uuid "2e302d31-baa5-4efb-b8a2-8b40a4e26f83")
 	)
 	(wire
 		(pts
@@ -3440,13 +3442,33 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 158.75) (xy 96.52 158.75)
+			(xy 201.93 30.48) (xy 201.93 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "388e05e2-1d5f-44a4-a72f-a0ac84897fe9")
+		(uuid "39f844cd-5116-4b85-af8c-ad24ea579cd7")
+	)
+	(wire
+		(pts
+			(xy 190.5 39.37) (xy 201.93 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3d4b7c-f409-49a4-a246-0f71b8c17753")
+	)
+	(wire
+		(pts
+			(xy 190.5 31.75) (xy 201.93 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c41cef7-cad2-44e3-b092-0dc3cc76958e")
 	)
 	(wire
 		(pts
@@ -3487,6 +3509,26 @@
 			(type default)
 		)
 		(uuid "47476612-4b56-42cf-877e-9b9ffb946373")
+	)
+	(wire
+		(pts
+			(xy 101.6 166.37) (xy 101.6 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49a0de76-15e1-49d4-81de-5bb07cfed86b")
+	)
+	(wire
+		(pts
+			(xy 101.6 168.91) (xy 81.28 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f3d0be5-335b-469f-8dfc-3c18ccda1ff2")
 	)
 	(wire
 		(pts
@@ -3607,6 +3649,16 @@
 			(type default)
 		)
 		(uuid "7c78d050-1e14-4cf3-86a6-896a1741420c")
+	)
+	(wire
+		(pts
+			(xy 201.93 39.37) (xy 201.93 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80b2686f-8974-43c7-a5ce-23e43c5c1fdc")
 	)
 	(wire
 		(pts
@@ -3740,16 +3792,6 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 166.37) (xy 104.14 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "accaa720-0cec-409d-9864-ac63edadc460")
-	)
-	(wire
-		(pts
 			(xy 99.06 54.61) (xy 93.98 54.61)
 		)
 		(stroke
@@ -3830,6 +3872,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 148.59) (xy 101.6 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4e3e163-3b29-44f3-81a8-2e1bdc526037")
+	)
+	(wire
+		(pts
 			(xy 81.28 147.32) (xy 81.28 148.59)
 		)
 		(stroke
@@ -3900,7 +3952,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 148.59) (xy 104.14 148.59)
+			(xy 81.28 148.59) (xy 101.6 148.59)
 		)
 		(stroke
 			(width 0)
@@ -4275,81 +4327,6 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 104.14 158.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0f6df232-a0f7-4539-ade1-0c67cd756fb8")
-		(property "Reference" "D1"
-			(at 106.934 148.844 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 113.284 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 105.41 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 106.68 168.275 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 104.14 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "ed7e703e-c02a-45d1-99e0-bc7a41384973")
-		)
-		(pin "1"
-			(uuid "c4d7b717-e110-405d-8225-1aa94c676704")
-		)
-		(pin "3"
-			(uuid "824e9192-8826-4216-8c7f-79e12c2c31e4")
-		)
-		(pin "2"
-			(uuid "929570d9-3e87-46c8-8c49-6f57f82dabe1")
-		)
-		(instances
-			(project "zamonaryboard"
-				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -5291,6 +5268,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 190.5 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5190cc11-b2c4-49eb-8ea7-68aa71c49ab1")
+		(property "Reference" "C5"
+			(at 194.31 34.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1uF"
+			(at 194.31 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 191.4652 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 190.5 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 190.5 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e9a0d5f2-7211-4944-a1ea-de1ed99b4ba5")
+		)
+		(pin "1"
+			(uuid "1b9d57a0-88cd-4f27-9440-44c357f5bb94")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 93.98 62.23 0)
 		(unit 1)
@@ -5814,6 +5861,82 @@
 		)
 	)
 	(symbol
+		(lib_id "LED:WS2812B-2020")
+		(at 101.6 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7059f432-ae2b-4640-abf7-c896e173a777")
+		(property "Reference" "D1"
+			(at 104.394 148.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 110.744 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+			(at 102.87 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+			(at 104.14 168.275 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 101.6 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "6b2e5293-e187-45f1-94d8-0a4b991c8307")
+		)
+		(pin "1"
+			(uuid "d0d0ddad-969c-44fe-9376-e9ee91da571b")
+		)
+		(pin "3"
+			(uuid "b5d9978f-d92d-4965-ae02-563b73429453")
+		)
+		(pin "2"
+			(uuid "2e2aefcb-c1bd-4520-9b5c-65afcb47a5f6")
+		)
+		(instances
+			(project "zamonaryboard"
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 124.46 22.86 0)
 		(unit 1)
@@ -6245,6 +6368,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VBUS")
+		(at 201.93 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7efd48cc-3f78-4ae6-aa76-a8065613e077")
+		(property "Reference" "#PWR031"
+			(at 201.93 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VBUS"
+			(at 201.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.93 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 201.93 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64e94d64-15b1-4750-ab9e-f71650e8d307")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Regulator_Linear:ME6211C33M5")
 		(at 46.99 116.84 0)
 		(unit 1)
@@ -6515,6 +6704,76 @@
 			(project "zamonaryboard"
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 201.93 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "874bd7d9-a726-420c-967c-fd276c2a87a7")
+		(property "Reference" "C11"
+			(at 205.74 34.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 205.74 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 202.8952 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 201.93 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 201.93 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "be4fc131-970e-45d1-a357-d4ac90bea1fd")
+		)
+		(pin "1"
+			(uuid "5d364b83-0a0d-4ef0-9176-ddc6a731ebb5")
+		)
+		(instances
+			(project "zamonaryboard"
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -6800,6 +7059,72 @@
 			(project ""
 				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 201.93 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a353f328-3ca5-47f7-9df5-a4c3067d343e")
+		(property "Reference" "#PWR030"
+			(at 201.93 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 201.93 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 201.93 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "803e1e21-5cb1-4405-8072-152037cb1157")
+		)
+		(instances
+			(project ""
+				(path "/d5ea9308-ab10-4197-867c-fba653905f7c"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
