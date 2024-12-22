@@ -8,15 +8,18 @@ void loop() {}
 #include "USBHIDKeyboard.h"
 #include <EEPROM.h>
 #include <ArduinoJson.h>
-
+#include <FastLED.h>
+#define NUM_LEDS 2
 USBHIDKeyboard Keyboard;
 
 // ESP32 Touch keyboard
 
 #define poll_data_rounding 1000.0
-//#define debug
+#define read_data_rounding 1000 // for cases when button noise is too high
+//#define debug                    and buttons start doubleclicking
 #define btn_1_pin T3
 #define btn_2_pin T5
+#define leds_pin 10
 
 //Type of touch signal reading
 
@@ -40,6 +43,9 @@ bool touch2detected = false;
 bool button_1_pressed = false;
 bool button_2_pressed = false;
 
+long time_leds_updated_last;
+
+CRGB leds[NUM_LEDS];
 
 #ifdef plotter
   static long timer_a;
@@ -72,19 +78,44 @@ void release_button_2(){ //using these functions is keeping the load off USB
   }
 }
 
+void handle_led(int btn1val, int button1_sensitivity, int btn2val, int button2_sensitivity){ //this function gets called every loop() cycle and controls the behavior of LEDs.
+
+  if (time_leds_updated_last<millis()-10){ //update every 10ms
+
+    if (btn1val>button1_sensitivity){
+      leds[0] = CRGB(0, 20, 15);
+    } else if (btn1val<button1_sensitivity-read_data_rounding) {
+      leds[0] = CRGB(0, 0, 0);
+    }
+
+    if (btn2val>button2_sensitivity){
+      leds[1] = CRGB(0, 20, 15);
+    } else if (btn2val<button2_sensitivity-read_data_rounding) {
+      leds[1] = CRGB(0, 0, 0);
+    }
+  
+    FastLED.show();
+
+    time_leds_updated_last=millis();
+  }
+}
+
 void setup() {
   Serial.begin(115200);
-  delay(200);  // give me some time to bring up serial monitor
+  delay(500);  // give me some time to bring up serial monitor
+
+
 
 
   Keyboard.begin();
   USB.begin();
   //pinMode(LED_BUILTIN, OUTPUT); board does not contain a built-in led
   EEPROM.begin(30);
+  FastLED.addLeds<WS2811, leds_pin, RGB>(leds, NUM_LEDS);
 
 
 
-#ifdef debug
+/*#ifdef debug
   delay(1000);
   Serial.println("Gently touch on button 1");
 
@@ -129,18 +160,34 @@ void setup() {
   EEPROM.put(18, last_button_value);
 
   EEPROM.commit();
-#endif
+#endif*/
 
   EEPROM.get(10, button1_sensitivity);
   EEPROM.get(18, button2_sensitivity);
 
+
   Serial.println(button1_sensitivity);
   Serial.println(button2_sensitivity);
+  for (int i; i<254; i+=3){
+    leds[0] = CRGB(i, 0, 0);
+    leds[1] = CRGB(i, 0, 0);
+    FastLED.show();
+    delay(5);
+  }
+  for (int i = 254; i>=0; i-=3){
+    leds[0] = CRGB(i, 0, 0);
+    leds[1] = CRGB(i, 0, 0);
+    FastLED.show();
+    delay(5);
+  }
+  
 /*#ifdef interrupts
   touchAttachInterrupt(btn_1_pin, gotTouch1, button1_sensitivity);
   touchAttachInterrupt(btn_2_pin, gotTouch2, button2_sensitivity);
 #endif*/
 }
+
+
 
 void gotTouch1() {
   touch1detected = true;
@@ -153,36 +200,18 @@ void gotTouch2() {
 
 
 void loop() {
-/*  #ifdef interrupts
-    if (touch1detected) {
-      if (touchInterruptGetLastStatus(btn_1_pin)) {
-        Keyboard.press('z');
-      } else {
-        Keyboard.release('z');
-      }
-      touch1detected = false;
-    }
-    if (touch2detected) {
-      if (touchInterruptGetLastStatus(btn_2_pin)) {
-        Keyboard.press('x');
-      } else {
-        Keyboard.release('x');
-      }
-      touch2detected = false;
-    }
-  #endif */
-  #ifdef analogRead
 
-    int btn1val = touchRead(btn_1_pin);
-    int btn2val = touchRead(btn_2_pin);
+  int btn1val = touchRead(btn_1_pin);
+  int btn2val = touchRead(btn_2_pin);
 
-    if (btn1val > button1_sensitivity) press_button_1();
-    else if (btn1val < button1_sensitivity - 4) release_button_1();
+  if (btn1val > button1_sensitivity) press_button_1();
+  else if (btn1val < button1_sensitivity - read_data_rounding) release_button_1();
 
-    if (btn2val > button2_sensitivity) press_button_2();
-    else if (btn2val < button2_sensitivity - 4) release_button_2();
+  if (btn2val > button2_sensitivity) press_button_2();
+  else if (btn2val < button2_sensitivity - read_data_rounding) release_button_2();
 
-  #endif
+  handle_led(btn1val, button1_sensitivity, btn2val, button2_sensitivity);
+
 
   if (Serial.available() > 0) {
 
@@ -269,6 +298,7 @@ void loop() {
       timer_b = 0;
     }
   #endif
+
   delayMicroseconds(500);
 }
 

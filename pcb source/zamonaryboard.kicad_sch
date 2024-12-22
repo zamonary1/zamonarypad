@@ -3402,6 +3402,16 @@
 	)
 	(wire
 		(pts
+			(xy 59.69 158.75) (xy 66.04 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2451b319-4b99-43a7-9c2a-63f9e53b3658")
+	)
+	(wire
+		(pts
 			(xy 88.9 158.75) (xy 93.98 158.75)
 		)
 		(stroke
@@ -4004,7 +4014,7 @@
 	)
 	(global_label "aRGB_pin"
 		(shape input)
-		(at 66.04 158.75 180)
+		(at 59.69 158.75 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4014,7 +4024,7 @@
 		)
 		(uuid "1e8852ad-e372-4877-8ffb-fe9edd3194b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 54.2254 158.75 0)
+			(at 47.8754 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
