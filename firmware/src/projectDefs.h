@@ -12,6 +12,9 @@
 //#define plotter //uncomment if you want to know poll rate
                   //note: uncompatible with desktop app
 
+//comment if you want to disable LED support.
+#define aLED
+
 #define eeprombtn1sens 10
 #define eeprombtn2sens 18
 #define eepromstartanim_colr 26 //color of boot animation (red)

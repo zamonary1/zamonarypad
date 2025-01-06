@@ -4,14 +4,15 @@ void setup() {}
 void loop() {}
 #else
 
-
+#include <Arduino.h>
 #include <EEPROM.h>
 #include <ArduinoJson.h>
 
+#include <projectDefs.h>
 #include <aLED.h>
 #include <usb.h>
 #include <serialStruff.h>
-#include <projectDefs.h>
+
 
 //#define NUM_LEDS 2
 
