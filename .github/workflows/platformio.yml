@@ -21,7 +21,7 @@ jobs:
         run: pip install --upgrade platformio
 
       - name: Build PlatformIO Project
-        run: pio run --environment esp32-s2
+        run: cd firmware && pio run --environment esp32-s2
       - uses: CupOfTea696/gh-action-auto-release@v1.0.0
         with:
           title: "Auto release test: $version"
