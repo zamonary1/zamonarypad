@@ -22,11 +22,14 @@ jobs:
 
       - name: Build PlatformIO Project
         run: cd firmware && pio run --environment esp32-s2
-      - uses: CupOfTea696/gh-action-auto-release@v1.0.0
+        
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          title: "Auto release test: $version"
-          tag: "v$semver"
-          draft: true
-          regex: "/^Release: #{semver}$/i"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            '.pio/build/esp32-s2-saola-1/bootloader.bin'
+            '.pio/build/esp32-s2-saola-1/partitions.bin'
+            '.pio/build/esp32-s2-saola-1/boot_app0.bin'
+            '.pio/build/esp32-s2-saola-1/firmware.bin'
+            LICENSE
