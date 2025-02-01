@@ -1,5 +1,6 @@
 pcb source/zamonaryboard-backups/
 pcb source/3dstencil
 desktop app/build/
-firmware
+firmware/
+zamonarypad-firmware/
 .git
